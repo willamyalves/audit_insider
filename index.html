@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Formulário</h2>
+  <div class="input-container">
+    <label for="C1_problem">C1 Problem:</label>
+    <select id="C1_problem" onchange="showC2()">
+      <option value="" selected disabled hidden>Selecione...</option>
+      <option value="retrieval_context">Retrieval trouxe o contexto necessário</option>
+      <option value="no_retrieval_context">Retrieval não trouxe o contexto necessário</option>
+      <option value="multiprompt">Multiprompt</option>
+    </select>
+  </div>
+
+  <div id="C2_container" class="hidden input-container">
+    <label for="C2_problem">C2 Problem:</label>
+    <select id="C2_problem" onchange="showC3()">
+      <option value="" selected disabled hidden>Selecione...</option>
+    </select>
+  </div>
+
+  <div id="C3_container" class="hidden input-container">
+    <label for="C3_problem">C3 Problem:</label>
+    <select id="C3_problem">
+      <option value="" selected disabled hidden>Selecione...</option>
+    </select>
+  </div>
+
+  <div id="Multiprompt_container" class="hidden input-container">
+    <label for="Multiprompt">Multiprompt:</label>
+    <select id="Multiprompt">
+      <option value="" selected disabled hidden>Selecione...</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+  </div>
+
+  <button onclick="copyValues()">Copiar Valores</button>
+
+  <div id="hidden-fields" class="hidden">
+    <input class="inputt" type="text" id="inputtext1" readonly>
+    <input class="inputt" type="text" id="inputtext2" readonly>
+    <input class="inputt" type="text" id="inputtext3" readonly>
+    <input class="inputt" type="text" id="inputtext4" readonly>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
